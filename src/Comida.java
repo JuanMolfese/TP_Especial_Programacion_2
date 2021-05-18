@@ -15,40 +15,32 @@ public class Comida {
 		this.precio = precio;
 		this.tiempoCoccion = tiempoCoccion;
 	}
-	public String getNombre() {
 
+	//GETTERS y SETTERS
+	public String getNombre() {
 		return nombre;
 	}
-
-
-
 	public String getTipo() {
 		return tipo;
 	}
-
 	public String getModoPreparacion() {
-
 		return modoPreparacion;
 	}
-
-
 	public int getCalorias()
 	{
 		return calorias;
 	}
-
-
-
 	public double getPrecio() {
 		return precio;
 	}
+	public double getTiempoCoccion() {
+		return tiempoCoccion;
+	}
+
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
-	public double getTiempoCoccion() {
-		return tiempoCoccion;
-	}
 
 	@Override
 	public String toString() {

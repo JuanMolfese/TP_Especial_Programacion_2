@@ -1,28 +1,31 @@
 package src;
 
 public abstract class EstacionTrabajo {
-    private String nombre;
-    private boolean libre;
+    protected int nroEstacion;
+    protected boolean libre;
 
-    public EstacionTrabajo(String nombre, boolean libre) {
-        this.nombre = nombre;
+    public EstacionTrabajo(int nroEstacion, boolean libre) {
+        this.nroEstacion = nroEstacion;
         this.libre = libre;
     }
 
-    public String getNombre() {
-        return nombre;
+
+    //Getters y Setters
+    public int getNroEstacion() {
+        return nroEstacion;
     }
-
-
-
+    public void setNroEstacion(int nroEstacion) {
+        this.nroEstacion = nroEstacion;
+    }
     public boolean isLibre() {
         return libre;
     }
-
     public void setLibre(boolean libre) {
         this.libre = libre;
     }
 
-    public abstract void estaLibre();
+
+    //Metodos abstractos que deben implementar los que implementen
+    public abstract boolean cumple(Comida c);
 
 }

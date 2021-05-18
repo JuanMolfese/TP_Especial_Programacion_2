@@ -16,9 +16,9 @@ public class Pedido {
 		comidas=new ArrayList<Comida>();
 
 	}
-	public ArrayList<Comida> getComidas() {
-		return comidas;
-	}
+
+	//NO DEBEMOS RESPONDER CON EL ARREGLO
+	//public ArrayList<Comida> getComidas() {return comidas;}
 
 	public void agregarComida (Comida c){
 		comidas.add(c);
