@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public class Cocina {
 	private Pedido pedido;

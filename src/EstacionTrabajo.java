@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public abstract class EstacionTrabajo {
     private String nombre;

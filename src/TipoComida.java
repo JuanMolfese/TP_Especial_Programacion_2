@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public class TipoComida extends EstacionTrabajo {
 	private String tipo;

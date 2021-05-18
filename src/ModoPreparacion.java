@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public class ModoPreparacion extends EstacionTrabajo {
 	private String modoPreparacion;

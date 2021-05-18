@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public class Palacio {
     public static void main (String[] args){

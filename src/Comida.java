@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public class Comida {
 	private String nombre,tipo, modoPreparacion;

@@ -1,4 +1,4 @@
-package tpe;
+package src;
 
 public class EstacionTemporal extends EstacionTrabajo {
 	private double tiempoCoccionMaxima;
