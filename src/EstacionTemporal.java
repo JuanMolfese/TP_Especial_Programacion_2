@@ -1,9 +1,9 @@
 package src;
 
 public class EstacionTemporal extends EstacionTrabajo {
-	private double tiempoCoccionMaxima;
+	private int tiempoCoccionMaxima;
 
-	public EstacionTemporal(int  nroEstacion, boolean libre, double tiempoCoccionMaxima) {
+	public EstacionTemporal(int  nroEstacion, boolean libre, int tiempoCoccionMaxima) {
 		super(nroEstacion, libre);
 		this.tiempoCoccionMaxima = tiempoCoccionMaxima;
 	}
@@ -13,7 +13,7 @@ public class EstacionTemporal extends EstacionTrabajo {
 		return tiempoCoccionMaxima;
 	}
 
-	public void setTiempoCoccionMaxima(double tiempoCoccionMaxima) {
+	public void setTiempoCoccionMaxima(int tiempoCoccionMaxima) {
 		this.tiempoCoccionMaxima = tiempoCoccionMaxima;
 	}
 
