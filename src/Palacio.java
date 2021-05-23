@@ -8,13 +8,17 @@ public class Palacio {
 
 
     public static void main (String[] args){
-        Comida c1=new Comida ("pollo","carne","frito",250,750,2);
-        Comida c2=new Comida ("empanadas de polenta","entrada","frito",988,120,20);
+        ComidaBase c1=new ComidaBase ("pollo","carne","horno",250,45,1500);
+        ComidaBase c2=new ComidaBase ("tapas de empanada","entrada","frito",50,3,500);
+        ComidaCompuesta comp1=new ComidaCompuesta ("empanadas de pollo","entrada","frito");
         Pedido p1=new Pedido(5,2,"Juampi");
-        p1.agregarComida(c1);
-        p1.agregarComida(c2);
-        p1.calcularPrecio();
-        System.out.println(p1);
+        comp1.agregarComidaBase(c1);
+        comp1.agregarComidaBase(c2);
+
+        System.out.println(comp1);
+        System.out.println(comp1.getPrecio());
+
+
 
 
     }

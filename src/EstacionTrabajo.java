@@ -30,6 +30,6 @@ public abstract class EstacionTrabajo {
 
 
     //Metodos abstractos que deben implementar los que implementen
-    public abstract boolean cumple(Comida c);
+    public abstract boolean cumple(ElementoComida c);
 
 }

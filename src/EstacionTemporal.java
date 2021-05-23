@@ -18,9 +18,9 @@ public class EstacionTemporal extends EstacionTrabajo {
 	}
 
 
-	public boolean cumple(Comida c){
+	public boolean cumple(ElementoComida c){
 		//Si el tiempo de coccion de la comida es menor al tiempo de ESTA estacion TRUE
-		return (c.getTiempoCoccion()<this.tiempoCoccionMaxima);
+		return (c.getTiempo()<this.tiempoCoccionMaxima);
 
 	}
 	

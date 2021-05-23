@@ -3,7 +3,7 @@ package src;
 import java.util.ArrayList;
 
 public class Pedido {
-	private ArrayList<Comida> comidas;
+	private ArrayList<ElementoComida> comidas;
 	private int nroMesa,nroPedido,precioTotal;
 	private String mozo;
 
@@ -45,14 +45,14 @@ public class Pedido {
 		this.mozo = mozo;
 	}
 
-	public void agregarComida (Comida c){
+	public void agregarComida (ElementoComida c){
 		if (!comidas.contains(c))//equals implementado en clase Comida
 			comidas.add(c);
 	}
 
 	public int calcularPrecio(){
 
-		 for (Comida com: comidas){
+		 for (ElementoComida com: comidas){
 		 	precioTotal+=com.getPrecio();
 		 }
 		 return precioTotal;

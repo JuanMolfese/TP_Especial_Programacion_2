@@ -8,7 +8,7 @@ public class SaleconFritas extends EstacionTrabajo {
 
 	}
 
-	public boolean cumple(Comida c){
+	public boolean cumple(ElementoComida c){
 		//Siempre CUMPLE con la condicion
 		return true;
 	}
