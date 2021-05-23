@@ -10,22 +10,22 @@ public class ModoPreparacion extends EstacionTrabajo {
 
 	//Getters y Setters
 	public String getModoPreparacion() {
+
 		return modoPreparacion;
 	}
 	public void setModoPreparacion(String modoPreparacion) {
+
 		this.modoPreparacion = modoPreparacion;
 	}
 
 
 	public boolean cumple(Comida c){
 		//Si el modo de preparacion de la cominda
-		if( c.getModoPreparacion().toLowerCase().equals(this.modoPreparacion.toLowerCase())){
-			return true;
-		}else{
-			return false;
+		return ( c.getModoPreparacion().toLowerCase().equals(this.modoPreparacion.toLowerCase()));
+
 		}
-	}
+}
 	
 	
 
-}
+

@@ -9,17 +9,19 @@ public class EstacionTemporal extends EstacionTrabajo {
 	}
 
 	//Getters y Setters
-	public double getTiempoCoccionMaxima() {return tiempoCoccionMaxima;}
-	public void setTiempoCoccionMaxima(double tiempoCoccionMaxima) {this.tiempoCoccionMaxima = tiempoCoccionMaxima;}
+	public double getTiempoCoccionMaxima() {
+		return tiempoCoccionMaxima;
+	}
+
+	public void setTiempoCoccionMaxima(double tiempoCoccionMaxima) {
+		this.tiempoCoccionMaxima = tiempoCoccionMaxima;
+	}
 
 
 	public boolean cumple(Comida c){
 		//Si el tiempo de coccion de la comida es menor al tiempo de ESTA estacion TRUE
-		if (c.getTiempoCoccion()<this.tiempoCoccionMaxima){
-			return true;
-		}else{
-			return false;
-		}
+		return (c.getTiempoCoccion()<this.tiempoCoccionMaxima);
+
 	}
 	
 
