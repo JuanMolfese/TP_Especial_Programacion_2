@@ -12,15 +12,19 @@ public abstract class EstacionTrabajo {
 
     //Getters y Setters
     public int getNroEstacion() {
+
         return nroEstacion;
     }
     public void setNroEstacion(int nroEstacion) {
+
         this.nroEstacion = nroEstacion;
     }
     public boolean isLibre() {
+
         return libre;
     }
     public void setLibre(boolean libre) {
+
         this.libre = libre;
     }
 

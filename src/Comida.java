@@ -1,5 +1,7 @@
 package src;
 
+import java.util.Objects;
+
 public class Comida {
 	private String nombre,tipo, modoPreparacion;
 	private int calorias;
@@ -36,10 +38,10 @@ public class Comida {
 	public double getTiempoCoccion() {
 		return tiempoCoccion;
 	}
-
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
 
 
 	@Override
@@ -51,6 +53,16 @@ public class Comida {
 				", calorias=" + calorias +
 				", precio=" + precio +
 				", tiempoCoccion=" + tiempoCoccion +
-				'}';
+				"}\n";
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Comida)) return false;
+		Comida comida = (Comida) o;
+		return getCalorias() == comida.getCalorias() && Double.compare(comida.getPrecio(), getPrecio()) == 0 && Double.compare(comida.getTiempoCoccion(), getTiempoCoccion()) == 0 && getNombre().equals(comida.getNombre()) && getTipo().equals(comida.getTipo()) && getModoPreparacion().equals(comida.getModoPreparacion());
+	}
+
+
 }
