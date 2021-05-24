@@ -6,11 +6,14 @@ public class ComidaCompuesta extends ElementoComida {
     private ArrayList<ElementoComida> listaComidas;
 
     public ComidaCompuesta(String nombre, String tipo, String modoPreparacion) {
+        //TODO Cris debemos charlar sobre el modo de preparacion, porque ponele si
+        // una comida base es frita y la otra al horno...el modo de preparacion de la compuesta ?? aparte lo
+        // generamos desde el constructor (al modo de preparacion) ... esta bien ?
+
         super(nombre, tipo, modoPreparacion,0);
         this.listaComidas = new ArrayList<>();
-
-
     }
+
 
     public void agregarComidaBase(ElementoComida com){
         if(!listaComidas.contains(com.getNombre())){
@@ -19,16 +22,12 @@ public class ComidaCompuesta extends ElementoComida {
     }
 
 
-
-
     @Override
     public int getPrecio() {
         int precioTotal=0;
         for (ElementoComida comida: listaComidas){
             precioTotal+= comida.getPrecio();
-
         }
-
         return precioTotal;
     }
 
@@ -38,7 +37,6 @@ public class ComidaCompuesta extends ElementoComida {
         for (ElementoComida comida: listaComidas){
             tiempoTotal+= comida.getTiempo();
         }
-
         return tiempoTotal;
     }
 
@@ -47,7 +45,6 @@ public class ComidaCompuesta extends ElementoComida {
         int totalCalorias=0;
         for (ElementoComida comida: listaComidas){
             totalCalorias+= comida.getCalorias();
-
         }
         return totalCalorias;
     }

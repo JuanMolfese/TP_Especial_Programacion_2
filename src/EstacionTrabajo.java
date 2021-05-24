@@ -9,27 +9,20 @@ public abstract class EstacionTrabajo {
         this.libre = libre;
     }
 
-
-    //Getters y Setters
-    public int getNroEstacion() {
-
-        return nroEstacion;
-    }
+    //GETTERS y SETTERS
+    public int getNroEstacion() {return nroEstacion;}
     public void setNroEstacion(int nroEstacion) {
-
         this.nroEstacion = nroEstacion;
     }
     public boolean isLibre() {
-
         return libre;
     }
     public void setLibre(boolean libre) {
-
         this.libre = libre;
     }
 
 
-    //Metodos abstractos que deben implementar los que implementen
+    //TODO Metodos abstractos que deben implementar los que implementen
     public abstract boolean cumple(ElementoComida c);
 
 }
