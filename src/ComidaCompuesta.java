@@ -34,19 +34,31 @@ public class ComidaCompuesta extends ElementoComida {
 
     @Override
     public int getTiempo() {
-        return 0;
+        int tiempoTotal=0;
+        for (ElementoComida comida: listaComidas){
+            tiempoTotal+= comida.getTiempo();
+        }
+
+        return tiempoTotal;
     }
 
     @Override
     public int getCalorias() {
-        return 0;
+        int totalCalorias=0;
+        for (ElementoComida comida: listaComidas){
+            totalCalorias+= comida.getCalorias();
+
+        }
+        return totalCalorias;
     }
 
     @Override
     public String toString() {
-        return "ComidaCompuesta{" +
-                "listaComidas=" + listaComidas +
-                "preciototal=" + precio +
+        return getNombre()+"{" +
+                "Compuesta por= " + listaComidas +
+                "tiempoTotal= " + getTiempo() +" minutos, "+
+                "total calorías= " + getCalorias() + " calorias, "+
+                "preciototal= $" + getPrecio() +
                 '}';
     }
 }

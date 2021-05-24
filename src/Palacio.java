@@ -16,7 +16,7 @@ public class Palacio {
         comp1.agregarComidaBase(c2);
 
         System.out.println(comp1);
-        System.out.println(comp1.getPrecio());
+
 
 
 
