@@ -52,6 +52,9 @@ public class ComidaCompuesta extends ElementoComida {
         return totalCalorias;
     }
 
+    //que hacer con estacionAsignada? Las comidas base de una comida compuesta
+    // se cocinan todas en una estacion, y es la misma para simples y compuesta?
+
     @Override
     public String toString() {
         return getNombre()+"{" +

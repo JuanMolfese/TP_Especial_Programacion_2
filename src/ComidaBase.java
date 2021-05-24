@@ -1,7 +1,7 @@
 package src;
 
 public class ComidaBase extends ElementoComida{
-    private int precio,tiempo,calorias;
+    private int precio,tiempo,calorias,estacionAsignada;
 
 
     public ComidaBase(String nombre, String tipo, String modoPreparacion, int precio, int tiempo, int calorias) {
@@ -9,6 +9,7 @@ public class ComidaBase extends ElementoComida{
         this.precio = precio;
         this.tiempo = tiempo;
         this.calorias = calorias;
+        this.estacionAsignada=0;
     }
 
 
