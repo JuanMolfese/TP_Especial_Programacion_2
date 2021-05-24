@@ -3,7 +3,7 @@ package src;
 import java.util.ArrayList;
 
 public class ComidaCompuesta extends ElementoComida {
-    private ArrayList<ElementoComida> listaComidas= new ArrayList<>();
+    private ArrayList<ElementoComida> listaComidas;
 
     public ComidaCompuesta(String nombre, String tipo, String modoPreparacion) {
         super(nombre, tipo, modoPreparacion,0);
@@ -57,11 +57,10 @@ public class ComidaCompuesta extends ElementoComida {
 
     @Override
     public String toString() {
-        return getNombre()+"{" +
+        return getNombre()+"\n" +
                 "Compuesta por= " + listaComidas +
                 "tiempoTotal= " + getTiempo() +" minutos, "+
                 "total calorías= " + getCalorias() + " calorias, "+
-                "preciototal= $" + getPrecio() +
-                '}';
+                "preciototal= $" + getPrecio();
     }
 }

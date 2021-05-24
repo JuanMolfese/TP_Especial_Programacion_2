@@ -31,11 +31,11 @@ public class ComidaBase extends ElementoComida{
 
     @Override
     public String toString() {
-        return getNombre()+"{" +
+        return getNombre()+":" +
                 "precio=" + getPrecio() +
                 ", tiempo=" + getTiempo() +
                 ", calorias=" + getCalorias() +
-                ", estacionAsignada=" + estacionAsignada +
-                "}\n";
+                ", estacionAsignada=" + estacionAsignada +","+
+                "\n";
     }
 }
