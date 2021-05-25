@@ -1,5 +1,6 @@
 package src;
 
+import src.busquedas.BuscarTipo;
 import src.busquedas.CriterioBusqueda;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ public class Pedido {
 	private ArrayList<ElementoComida> comidas;
 	private int nroMesa,nroPedido,precioTotal;
 	private String mozo;
-	private final String tipoAbuscar = "ensalada";//no conviene hacerlo gral? (asignar valor al String al crear objeto)
+
 
 	public Pedido(int nroMesa, int nroPedido,String mozo) {
 		
@@ -54,22 +55,20 @@ public class Pedido {
 			if (buscado.cumple(com)) {
 				p.add(com);
 			}
-
 		}
 		return p;
 	}
 
 	//En una de las busquedas pide que el pedido informe si alguna de sus comidas
 	//es de tipo ensalada, a su vez que indique la cantidad de ensaladas en el pedido.
-	public int contieneEnsalada(){
-		int contadorEnsalada = 0;
+	public boolean contieneTipoComida(String tipoComida){
 
 		for (ElementoComida c : comidas) {
-			if(c.getTipo().equals(tipoAbuscar)){
-				contadorEnsalada++;
+			if(c.getTipo().equals(new BuscarTipo(tipoComida))){
+				return true;
 			}
 		}
-		return contadorEnsalada;
+		return false;
 	}
 
 	//Retorna el valor total de calorias del pedido, el INT resultante lo podemos usar para preguntar si

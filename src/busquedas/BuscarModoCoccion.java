@@ -2,11 +2,11 @@ package src.busquedas;
 
 import src.ElementoComida;
 
-public class BuscarTipoCoccion implements CriterioBusqueda{
+public class BuscarModoCoccion implements CriterioBusqueda{
 
     private String tipoCoccion;
 
-    public BuscarTipoCoccion(String tipoCoccion) {
+    public BuscarModoCoccion(String tipoCoccion) {
         this.tipoCoccion = tipoCoccion;
     }
 
