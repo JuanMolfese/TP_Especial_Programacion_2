@@ -3,6 +3,7 @@ import src.busquedas.*;
 
 import java.util.ArrayList;
 
+
 public class Palacio {
     private ArrayList<ElementoComida> comidas=new ArrayList<>();
 

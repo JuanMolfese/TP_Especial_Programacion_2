@@ -1,5 +1,7 @@
 package src;
 
+import src.busquedas.CriterioBusqueda;
+
 import java.util.ArrayList;
 
 public class Cocina {
@@ -12,6 +14,7 @@ public class Cocina {
 
 	}
 
+
 	public void addEstacion(EstacionTrabajo e){
 		estaciones.add(e);
 	}
@@ -22,7 +25,13 @@ public class Cocina {
 		//SI : cumple(Comida c) && esta Libre => asigno a la estacion esa comida y la pongo en false al Libre.
 
 	}
-	
+
+	//TODO maneja los criterios para CALCULAR COSTO DEL PEDIDO. Diariamente los puede ir cambiando.
+	// Quizas debamos tener en la clase cocina un arreglo con los criterios que se aplican este día
+	// para calcular el momento a cobrar de un pedido.- OJO no estoy seguro, pero lo dejo por aca para que lo charlemos
+	 public void setFormaCalculo_MontoPedido(CriterioBusqueda criterio){
+		//listaCrietoriosAaplicar.add(criterio);
+	 }
 	
 
 }

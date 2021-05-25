@@ -1,14 +1,12 @@
 package src;
 
-import src.busquedas.CriterioBusqueda;
-
 import java.util.ArrayList;
 
 public class Pedido {
 	private ArrayList<ElementoComida> comidas;
 	private int nroMesa,nroPedido,precioTotal;
 	private String mozo;
-	private final String tipoAbuscar = "ensalada";//no conviene hacerlo gral? (asignar valor al String al crear objeto)
+	private final String tipoAbuscar = "ensalada";
 
 	public Pedido(int nroMesa, int nroPedido,String mozo) {
 		
@@ -19,8 +17,6 @@ public class Pedido {
 		comidas=new ArrayList<>();
 
 	}
-
-
 
 	//NO DEBEMOS RESPONDER CON EL ARREGLO
 	//public ArrayList<Comida> getComidas() {return comidas;}
@@ -49,17 +45,6 @@ public class Pedido {
 			comidas.add(c);
 	}
 
-	public ArrayList<ElementoComida> buscar(CriterioBusqueda buscado) {//creo que va en Cocina,
-		                                                               // revisar juntos el enunciado
-		ArrayList<ElementoComida> p = new ArrayList<>();
-		for (ElementoComida com : comidas) {
-			if (buscado.cumple(com)) {
-				p.add(com);
-			}
-
-		}
-		return p;
-	}
 	//En una de las busquedas pide que el pedido informe si alguna de sus comidas
 	//es de tipo ensalada, a su vez que indique la cantidad de ensaladas en el pedido.
 	public int contieneEnsalada(){
@@ -75,9 +60,7 @@ public class Pedido {
 
 	//Retorna el valor total de calorias del pedido, el INT resultante lo podemos usar para preguntar si
 	//es mayor a 500 ... el total $$ del pedido le sumamos 100 pesos.
-
-	public int cantidadCalorias(){//Juan, ya esta el metodo en ElementoComida(segun consigna, el adicional se aplica
-		                          // a cada comida ordenada, es responsabilidad de Comida).Charlarlo dsps
+	public int cantidadCalorias(){
 		int totalCalorias=0;
 		for (ElementoComida c:comidas){
 			totalCalorias+=c.getCalorias();
@@ -95,12 +78,12 @@ public class Pedido {
 	@Override
 	public String toString() {
 		return "Pedido{" +
-				" nroPedido=" + nroPedido +
+				"comidas=" + comidas +
 				", nroMesa=" + nroMesa +
-				", mozo= " + mozo +"\n"+
-				"comidas=" + comidas + "\n" +
-				" Precio total del pedido=" + calcularPrecio() +
-				"}\n";
+				", nroPedido=" + nroPedido +
+				", precioTotal=" + precioTotal +
+				", mozo='" + mozo + '\'' +
+				'}';
 	}
 
 }

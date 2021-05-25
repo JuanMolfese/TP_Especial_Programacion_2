@@ -13,7 +13,6 @@ public class ComidaBase extends ElementoComida{
     }
 
 
-
     @Override
     public int getPrecio() {
         return this.precio;

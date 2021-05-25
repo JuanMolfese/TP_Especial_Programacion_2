@@ -5,7 +5,11 @@ import java.util.Objects;
 public abstract class ElementoComida {
    private String nombre,tipo,modoPreparacion;
 
-
+//TODO tenemos q re-hablar el tema del precio, en teoria todo elemento comida, tendria que
+// tener un precio ? pienso que si. Aca esta en la signatura pero no el constructor y por
+// ende no le podemos hacer un setPrecio (que lo veo necesario al implementar la
+// busquedaSumaPorcentajeFijoPropina, ya que quería setear el vamor sumandole el porcentaje que
+// pasen al crear/instanciar la busqueda).
     public ElementoComida(String nombre, String tipo, String modoPreparacion,int precio) {
         this.nombre = nombre;
         this.tipo = tipo;
@@ -32,6 +36,7 @@ public abstract class ElementoComida {
     public void setModoPreparacion(String modoPreparacion) {
         this.modoPreparacion = modoPreparacion;
     }
+    //public void setPrecio(int precio){this.precio = precio;}
 
 
     public abstract int getPrecio();
