@@ -58,6 +58,7 @@ public class ComidaCompuesta extends ElementoComida {
                 "Compuesta por= " + listaComidas +
                 "tiempoTotal= " + getTiempo() +" minutos, "+
                 "total calorías= " + getCalorias() + " calorias, "+
-                "preciototal= $" + getPrecio();
+                "preciototal= $" + getPrecio() +
+                "\n";
     }
 }
