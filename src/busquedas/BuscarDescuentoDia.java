@@ -4,11 +4,14 @@ import src.ElementoComida;
 
 import java.time.LocalDate;
 
-public class BuscarDescuentoMiercoles implements CriterioBusqueda{
+//Pasarle el dia, nos posibilita a poder usarlo con cualquier dia que la cocina lo requiera, es decir
+//no solo los miercoles.
+
+public class BuscarDescuentoDia implements CriterioBusqueda{
     private String dia;
 
-    public BuscarDescuentoMiercoles() {
-        this.dia = "miercoles";
+    public BuscarDescuentoDia(String dia){
+        this.dia = dia;
     }
 
     @Override
