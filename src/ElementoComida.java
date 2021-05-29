@@ -10,7 +10,7 @@ public abstract class ElementoComida {
 // ende no le podemos hacer un setPrecio (que lo veo necesario al implementar la
 // busquedaSumaPorcentajeFijoPropina, ya que quería setear el vamor sumandole el porcentaje que
 // pasen al crear/instanciar la busqueda).
-    public ElementoComida(String nombre, String tipo, String modoPreparacion,int precio) {
+    public ElementoComida(String nombre, String tipo, String modoPreparacion) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.modoPreparacion = modoPreparacion;

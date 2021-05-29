@@ -4,15 +4,15 @@ import src.ElementoComida;
 
 public class BuscarModoCoccion implements CriterioBusqueda{
 
-    private String tipoCoccion;
+    private String modoCoccion;
 
     public BuscarModoCoccion(String tipoCoccion) {
-        this.tipoCoccion = tipoCoccion;
+        this.modoCoccion = tipoCoccion;
     }
 
     @Override
     public boolean cumple(ElementoComida comida) {
-        if(comida.getTipo().equals(tipoCoccion)){
+        if(comida.getModoPreparacion().equals(modoCoccion)){
             return true;
         }else{
             return false;

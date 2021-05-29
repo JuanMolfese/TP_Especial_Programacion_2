@@ -2,6 +2,7 @@ package src;
 
 import src.busquedas.BuscarTipo;
 import src.busquedas.CriterioBusqueda;
+import src.calculosTarifa.CalculadorPrecio;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,10 @@ public class Pedido {
 			}
 		}
 		return p;
+	}
+
+	public int precioFinalComida(CalculadorPrecio calc){
+		return 0;
 	}
 
 	//En una de las busquedas pide que el pedido informe si alguna de sus comidas

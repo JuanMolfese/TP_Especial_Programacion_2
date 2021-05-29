@@ -10,7 +10,7 @@ public class ComidaCompuesta extends ElementoComida {
         // una comida base es frita y la otra al horno...el modo de preparacion de la compuesta ?? aparte lo
         // generamos desde el constructor (al modo de preparacion) ... esta bien ?
 
-        super(nombre, tipo, modoPreparacion,0);
+        super(nombre, tipo, modoPreparacion);
         this.listaComidas = new ArrayList<>();
     }
 

@@ -5,7 +5,7 @@ public class ComidaBase extends ElementoComida{
 
 
     public ComidaBase(String nombre, String tipo, String modoPreparacion, int precio, int tiempo, int calorias) {
-        super(nombre, tipo, modoPreparacion,precio);
+        super(nombre, tipo, modoPreparacion);
         this.precio = precio;
         this.tiempo = tiempo;
         this.calorias = calorias;
