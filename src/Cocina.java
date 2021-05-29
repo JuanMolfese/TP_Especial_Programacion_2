@@ -9,12 +9,12 @@ public class Cocina {
 
 	private ArrayList<EstacionTrabajo> estaciones;
 	private ArrayList<ElementoComida> comidas;
-	private ArrayList<CriterioBusqueda> listaCriteriosAaplicar;
+
 
 	public Cocina() {
 		estaciones = new ArrayList<>();
 		comidas= new ArrayList<>();
-		listaCriteriosAaplicar = new ArrayList<>();
+
 	}
 
 
@@ -51,6 +51,8 @@ public class Cocina {
 		}
 		return montoPedido;
 	 }
+
+
 	
 
 }

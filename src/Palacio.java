@@ -9,10 +9,6 @@ public class Palacio {
 
 
 
-
-
-
-
 //TODO Ver si se pueden armar metodos para hacer
 // los add en la clase Palacio
 
@@ -37,6 +33,7 @@ public class Palacio {
         BuscarModoCoccion modCoc1= new BuscarModoCoccion("horno");
         BuscarTipo tipoCoc1 = new BuscarTipo("ensalada");
         BusquedaCombinada_AND and = new BusquedaCombinada_AND(tiempoCoc1,modCoc1);
+        CalculadorPrecio calc1 = new CalculadorPrecio(and, 50, 130);
 
 
         //TODO
