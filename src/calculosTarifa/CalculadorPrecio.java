@@ -1,6 +1,6 @@
 package src.calculosTarifa;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public interface CalculadorPrecio  {
     int calcularAdicional(ElementoComida comida);

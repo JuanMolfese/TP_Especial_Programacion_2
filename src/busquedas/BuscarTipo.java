@@ -1,6 +1,6 @@
 package src.busquedas;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 
 public class BuscarTipo implements CriterioBusqueda{
@@ -14,5 +14,12 @@ public class BuscarTipo implements CriterioBusqueda{
     @Override
     public boolean cumple(ElementoComida comida) {
         return (comida.getTipo().equals(tipo));
+    }
+
+    @Override
+    public String toString() {
+        return "BuscarTipo{" +
+                "tipo='" + tipo + '\'' +
+                '}';
     }
 }

@@ -1,6 +1,6 @@
 package src.busquedas;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public class BuscarTiempoCoccion implements CriterioBusqueda{
 
@@ -20,5 +20,12 @@ public class BuscarTiempoCoccion implements CriterioBusqueda{
             return false;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "BuscarTiempoCoccion{" +
+                "tiempococcion=" + tiempococcion +
+                '}';
     }
 }

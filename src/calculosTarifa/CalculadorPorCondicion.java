@@ -1,6 +1,6 @@
 package src.calculosTarifa;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 import src.busquedas.CriterioBusqueda;
 
 public class CalculadorPorCondicion implements CalculadorPrecio{

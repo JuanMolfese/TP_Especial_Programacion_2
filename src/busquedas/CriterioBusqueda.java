@@ -1,6 +1,6 @@
 package src.busquedas;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public interface CriterioBusqueda {
 

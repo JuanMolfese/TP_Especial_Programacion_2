@@ -1,13 +1,13 @@
 package src.busquedas;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public class BuscarModoCoccion implements CriterioBusqueda{
 
     private String modoCoccion;
 
-    public BuscarModoCoccion(String tipoCoccion) {
-        this.modoCoccion = tipoCoccion;
+    public BuscarModoCoccion(String modoCoccion) {
+        this.modoCoccion = modoCoccion;
     }
 
     @Override
@@ -17,5 +17,12 @@ public class BuscarModoCoccion implements CriterioBusqueda{
         }else{
             return false;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "BuscarModoCoccion{" +
+                "modoCoccion='" + modoCoccion + '\'' +
+                '}';
     }
 }

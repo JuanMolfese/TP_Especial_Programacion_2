@@ -9,20 +9,23 @@ import java.util.ArrayList;
 
 public class Cocina {
 
-	private ArrayList<CalculadorPrecio> calculosAdicionales;
+	private CalculadorPrecio calculoAdicional;
 	private ArrayList<EstacionTrabajo> estaciones;
 	private ArrayList<Pedido> pedidos;
-	//private ArrayList<ElementoComida> comidas;
+
 
 
 
 	public Cocina() {
 		estaciones = new ArrayList<>();
 		pedidos = new ArrayList<>();
-		calculosAdicionales = new ArrayList<>();
-		//	comidas = new ArrayList<>();
+		calculoAdicional = null;
+
 	}
 
+	public void setCalculoAdicional(CalculadorPrecio calculoAdicional) {
+		this.calculoAdicional = calculoAdicional;
+	}
 
 	public void addEstacion(EstacionTrabajo e) {
 		estaciones.add(e);
@@ -32,13 +35,15 @@ public class Cocina {
 		pedidos.add(p);
 	}
 
-	public void addCriterioCalculoPrecios(CalculadorPrecio calcPrecio){
-		calculosAdicionales.add(calcPrecio);
-	}
 
 
-	public int sumarAdicionales (ArrayList<CalculadorPrecio> calc){
-		return 0;
+	public int PrecioFinalPedido(Pedido p){//establezco precio final en base a los criterios
+		if (calculoAdicional!=null) {
+			return p.precioFinalComida(calculoAdicional);
+		}
+		else{
+			return p.precioFinalComida();
+		}
 	}
 
 	public void asignarComidas(Pedido p) {
@@ -49,31 +54,13 @@ public class Cocina {
 
 	}
 
-
-
-	//TODO maneja los criterios para CALCULAR COSTO DEL PEDIDO. Diariamente los puede ir cambiando.
-	// Quizas debamos tener en la clase cocina un arreglo con los criterios que se aplican este día
-	// para calcular el momento a cobrar de un pedido.- OJO no estoy seguro, pero lo dejo por aca para que lo charlemos
-
-
-
-
-
-/*	 public int cobrarPedido(Pedido p){
-		int montoPedido=0;
-
-		for (ElementoComida comida : comidas){
-			//TODO
-			// A cada comida => calcular el precio en funcion a los criterios instanciados
-			for(CriterioBusqueda criterio : listaCriteriosAaplicar){
-				if (criterio.cumple(comida)){
-					//ACA CAGAMOS
-				}
-			}
-		}
-		return montoPedido;
-	 }*/
-
-
+	@Override
+	public String toString() {
+		return "Cocina{\n" +
+				"calculosAdicionales=" + calculoAdicional +
+				", estaciones=" + estaciones +
+				", pedidos=" + pedidos +
+				"}\n";
+	}
 }
 

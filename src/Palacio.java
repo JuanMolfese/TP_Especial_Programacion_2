@@ -1,22 +1,13 @@
 package src;
 import src.busquedas.*;
-import src.calculosTarifa.CalculadorPorCondicion;
-import src.calculosTarifa.CalculadorPorPorcentaje;
-import src.estacionesTrabajo.EstacionModoPreparacion;
-import src.estacionesTrabajo.EstacionTemporal;
-import src.estacionesTrabajo.EstacionSaleconFritas;
-import src.estacionesTrabajo.EstacionTipoComida;
-
-import java.util.ArrayList;
-
+import src.calculosTarifa.*;
+import src.compositeComida.ComidaBase;
+import src.compositeComida.ComidaCompuesta;
+import src.estacionesTrabajo.*;
 
 public class Palacio {
-    private ArrayList<ElementoComida> comidas=new ArrayList<>();
 
 
-
-//TODO Ver si se pueden armar metodos para hacer
-// los add en la clase Palacio
 
 
     public static void main (String[] args){
@@ -28,7 +19,7 @@ public class Palacio {
         ComidaBase c2=new ComidaBase ("tapas de empanada","entrada","frito",50,3,500);
         ComidaBase c3=new ComidaBase ("arroz","cereal","hervido",120,30,200);
 
-        ComidaCompuesta comp1=new ComidaCompuesta ("empanadas de pollo","entrada","frito");
+        ComidaCompuesta comp1=new ComidaCompuesta ("empanadas de pollo","entrada","horno");
         ComidaCompuesta comp2=new ComidaCompuesta ("rissotto","guiso","olla");
 
         comp1.agregarComidaBase(c1);
@@ -41,11 +32,11 @@ public class Palacio {
         Pedido p1=new Pedido(5,2,"Juampi");
         p1.agregarComida(comp1);
         p1.agregarComida(comp2);
-        p1.agregarComida(c1);
+
 
     //***  BUSQUEDAS  ***
         //Por TIEMPO de coccion
-        BuscarTiempoCoccion tiempoCoc1=new BuscarTiempoCoccion(20);
+        BuscarTiempoCoccion tiempoCoc1=new BuscarTiempoCoccion(50);
 
         //Por MODO de coccion
         BuscarModoCoccion modoCoc1= new BuscarModoCoccion("horno");
@@ -59,11 +50,13 @@ public class Palacio {
         BusquedaCombinada_AND and = new BusquedaCombinada_AND(tiempoCoc1,modoCoc1);
         BusquedaCombinada_OR or = new BusquedaCombinada_OR(modoCoc2,tipoComida2);
 
-    //TODO Criterios de Calculo de precios que establece la COCINA
-        //Utilizo Busquedas y determino valor monetarios para si se cumple o no se cumple.
+        //Utilizamos Busquedas y determinamos valor monetarios para si se cumple o no se cumple.
         CalculadorPorCondicion calc1 = new CalculadorPorCondicion(and, 50, 130);
+
         //Cargo porcentajes fijos (positivos o negativos) a todas las comidas de un pedido.
         CalculadorPorPorcentaje porc1=new CalculadorPorPorcentaje("Miercoles",-20);
+        CalculadorAND porcYCalc1=new CalculadorAND(calc1,porc1);
+
 
     //*** ESTACIONES DE TRABAJO  ***
         //Creamos una estacion de trabajo de tipo : Tiempo Max de Coccion
@@ -87,23 +80,18 @@ public class Palacio {
 
         //Entregamos PEDIDO a la COCINA
         nuestraCocina.addPedido(p1);
+        System.out.println(nuestraCocina);
 
         //Cargamos el CRITERIO DE CALCULO DE PRECIOS VIGENTE
-        nuestraCocina.addCriterioCalculoPrecios(calc1);
-
-        //TODO
-        /*nuestraCocina.setFormaCalculo_MontoPedido(tiempoCoc1);
-        nuestraCocina.setFormaCalculo_MontoPedido(modCoc1);
-        nuestraCocina.setFormaCalculo_MontoPedido(tipoCoc1);
-        nuestraCocina.setFormaCalculo_MontoPedido(and);*/
+       nuestraCocina.setCalculoAdicional(porcYCalc1);
+       System.out.println(nuestraCocina.PrecioFinalPedido(p1));
 
 
-        //TODO
-        //int monto = nuestraCocina.cobrarPedido(p1);
-        //System.out.println(monto);
 
-        //System.out.println(p1);
-        //System.out.println(p1.buscar(coc1));
+
+
+
+
 
 
 

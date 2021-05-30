@@ -1,6 +1,6 @@
 package src.busquedas;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public class BusquedaCombinada_AND implements CriterioBusqueda{
 
@@ -14,10 +14,15 @@ public class BusquedaCombinada_AND implements CriterioBusqueda{
 
     @Override
     public boolean cumple(ElementoComida comida) {
-        if(c1.cumple(comida) && c2.cumple(comida)){
-            return true;
-        }else{
-            return false;
-        }
+        return (c1.cumple(comida) && c2.cumple(comida));
+
+    }
+
+    @Override
+    public String toString() {
+        return "BusquedaCombinada_AND{" +
+                "c1=" + c1 +
+                ", c2=" + c2 +
+                '}';
     }
 }

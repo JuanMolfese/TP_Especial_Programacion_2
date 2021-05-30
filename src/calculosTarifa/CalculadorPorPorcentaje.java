@@ -1,6 +1,6 @@
 package src.calculosTarifa;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public class CalculadorPorPorcentaje implements CalculadorPrecio{
     private String concepto;
@@ -14,5 +14,13 @@ public class CalculadorPorPorcentaje implements CalculadorPrecio{
     @Override
     public int calcularAdicional(ElementoComida comida) {
         return ((comida.getPrecio()*porcentaje)/100);
+    }
+
+    @Override
+    public String toString() {
+        return "CalculadorPorPorcentaje{" +
+                "concepto='" + concepto + '\'' +
+                ", porcentaje=" + porcentaje +
+                '}';
     }
 }

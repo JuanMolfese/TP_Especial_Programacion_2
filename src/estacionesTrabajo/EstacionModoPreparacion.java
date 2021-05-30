@@ -1,7 +1,6 @@
 package src.estacionesTrabajo;
 
-import src.ElementoComida;
-import src.estacionesTrabajo.EstacionTrabajo;
+import src.compositeComida.ElementoComida;
 
 public class EstacionModoPreparacion extends EstacionTrabajo {
 	private String modoPreparacion;

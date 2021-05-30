@@ -1,6 +1,6 @@
 package src.estacionesTrabajo;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public class EstacionSaleconFritas extends EstacionTrabajo {
 

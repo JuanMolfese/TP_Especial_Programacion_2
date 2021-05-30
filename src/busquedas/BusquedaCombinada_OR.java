@@ -1,6 +1,6 @@
 package src.busquedas;
 
-import src.ElementoComida;
+import src.compositeComida.ElementoComida;
 
 public class BusquedaCombinada_OR implements CriterioBusqueda{
     CriterioBusqueda c1;

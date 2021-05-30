@@ -1,7 +1,7 @@
-package src;
+package src.compositeComida;
 
 public class ComidaBase extends ElementoComida{
-    private int precio,tiempo,calorias,estacionAsignada;
+    private int precio,tiempo,calorias;
 
 
     public ComidaBase(String nombre, String tipo, String modoPreparacion, int precio, int tiempo, int calorias) {
@@ -9,7 +9,7 @@ public class ComidaBase extends ElementoComida{
         this.precio = precio;
         this.tiempo = tiempo;
         this.calorias = calorias;
-        this.estacionAsignada=0;
+
     }
 
 
@@ -31,10 +31,10 @@ public class ComidaBase extends ElementoComida{
     @Override
     public String toString() {
         return getNombre()+":" +
+                super.toString()+
                 "precio=" + getPrecio() +
                 ", tiempo=" + getTiempo() +
                 ", calorias=" + getCalorias() +
-                ", estacionAsignada=" + estacionAsignada +","+
                 "\n";
     }
 }

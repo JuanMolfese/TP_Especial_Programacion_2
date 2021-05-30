@@ -1,19 +1,17 @@
-package src;
+package src.compositeComida;
 
 import java.util.Objects;
 
 public abstract class ElementoComida {
    private String nombre,tipo,modoPreparacion;
+   private int estacionAsignada;
 
-//TODO tenemos q re-hablar el tema del precio, en teoria todo elemento comida, tendria que
-// tener un precio ? pienso que si. Aca esta en la signatura pero no el constructor y por
-// ende no le podemos hacer un setPrecio (que lo veo necesario al implementar la
-// busquedaSumaPorcentajeFijoPropina, ya que quería setear el vamor sumandole el porcentaje que
-// pasen al crear/instanciar la busqueda).
+
     public ElementoComida(String nombre, String tipo, String modoPreparacion) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.modoPreparacion = modoPreparacion;
+        this.estacionAsignada=0;
     }
 
     //GETTERS y SETTERS
@@ -27,17 +25,9 @@ public abstract class ElementoComida {
         return modoPreparacion;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEstacionAsignada(int estacionAsignada) {
+        this.estacionAsignada = estacionAsignada;
     }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public void setModoPreparacion(String modoPreparacion) {
-        this.modoPreparacion = modoPreparacion;
-    }
-    //public void setPrecio(int precio){this.precio = precio;}
-
 
     public abstract int getPrecio();
     public abstract int getTiempo();
@@ -51,5 +41,13 @@ public abstract class ElementoComida {
         return Objects.equals(getNombre(), that.getNombre());
     }
 
-
+    @Override
+    public String toString() {
+        return "ElementoComida{" +
+                "nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", modoPreparacion='" + modoPreparacion + '\'' +
+                ", estacionAsignada=" + estacionAsignada +
+                '}';
+    }
 }

@@ -1,4 +1,4 @@
-package src;
+package src.compositeComida;
 
 import java.util.ArrayList;
 
@@ -58,6 +58,7 @@ public class ComidaCompuesta extends ElementoComida {
                 "Compuesta por= " + listaComidas +
                 "tiempoTotal= " + getTiempo() +" minutos, "+
                 "total calorías= " + getCalorias() + " calorias, "+
+                "modo preparación= " +getModoPreparacion()+
                 "preciototal= $" + getPrecio() +
                 "\n";
     }
