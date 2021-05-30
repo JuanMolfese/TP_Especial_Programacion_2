@@ -45,13 +45,13 @@ public class Pedido {
 
 
 	public void agregarComida (ElementoComida c){
-		if (!comidas.contains(c))//equals implementado en clase Comida
 			comidas.add(c);
 	}
 
 	public ArrayList<ElementoComida> buscar(CriterioBusqueda buscado) {//creo que va en Cocina,
 		                                                               // revisar juntos el enunciado
 		ArrayList<ElementoComida> p = new ArrayList<>();
+
 		for (ElementoComida com : comidas) {
 			if (buscado.cumple(com)) {
 				p.add(com);
@@ -59,6 +59,7 @@ public class Pedido {
 		}
 		return p;
 	}
+
 
 	public int precioFinalComida(CalculadorPrecio calc){
 		return 0;

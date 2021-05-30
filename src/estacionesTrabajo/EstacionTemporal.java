@@ -1,4 +1,6 @@
-package src;
+package src.estacionesTrabajo;
+
+import src.ElementoComida;
 
 public class EstacionTemporal extends EstacionTrabajo {
 	private int tiempoCoccionMaxima;
@@ -12,7 +14,6 @@ public class EstacionTemporal extends EstacionTrabajo {
 	public double getTiempoCoccionMaxima() {
 		return tiempoCoccionMaxima;
 	}
-
 	public void setTiempoCoccionMaxima(int tiempoCoccionMaxima) {
 		this.tiempoCoccionMaxima = tiempoCoccionMaxima;
 	}
@@ -21,8 +22,6 @@ public class EstacionTemporal extends EstacionTrabajo {
 	public boolean cumple(ElementoComida c){
 		//Si el tiempo de coccion de la comida es menor al tiempo de ESTA estacion TRUE
 		return (c.getTiempo()<this.tiempoCoccionMaxima);
-
 	}
-	
 
 }

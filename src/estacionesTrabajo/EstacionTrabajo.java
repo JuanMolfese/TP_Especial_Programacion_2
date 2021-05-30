@@ -1,4 +1,6 @@
-package src;
+package src.estacionesTrabajo;
+
+import src.ElementoComida;
 
 public abstract class EstacionTrabajo {
     protected int nroEstacion;
@@ -22,7 +24,7 @@ public abstract class EstacionTrabajo {
     }
 
 
-    //TODO Metodos abstractos que deben implementar los que implementen
+    //TODO Metodos abstractos que deben tener los que implementen
     public abstract boolean cumple(ElementoComida c);
 
 }

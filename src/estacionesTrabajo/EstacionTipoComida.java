@@ -1,9 +1,12 @@
-package src;
+package src.estacionesTrabajo;
 
-public class TipoComida extends EstacionTrabajo {
+import src.ElementoComida;
+import src.estacionesTrabajo.EstacionTrabajo;
+
+public class EstacionTipoComida extends EstacionTrabajo {
 	private String tipo;
 
-	public TipoComida(int nroEstacion, boolean libre, String tipo) {
+	public EstacionTipoComida(int nroEstacion, boolean libre, String tipo) {
 		super(nroEstacion, libre);
 		this.tipo = tipo;
 	}
