@@ -11,7 +11,7 @@ public class EstacionTemporal extends EstacionTrabajo {
 	}
 
 	//Getters y Setters
-	public double getTiempoCoccionMaxima() {
+	public int getTiempoCoccionMaxima() {
 		return tiempoCoccionMaxima;
 	}
 	public void setTiempoCoccionMaxima(int tiempoCoccionMaxima) {
@@ -21,7 +21,7 @@ public class EstacionTemporal extends EstacionTrabajo {
 
 	public boolean cumple(ElementoComida c){
 		//Si el tiempo de coccion de la comida es menor al tiempo de ESTA estacion TRUE
-		return (c.getTiempo()<this.tiempoCoccionMaxima);
+		return (isLibre() && c.getTiempo()<this.tiempoCoccionMaxima);
 	}
 
 }

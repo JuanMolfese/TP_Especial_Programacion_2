@@ -27,4 +27,11 @@ public abstract class EstacionTrabajo {
     //TODO Metodos abstractos que deben tener los que implementen
     public abstract boolean cumple(ElementoComida c);
 
+    @Override
+    public String toString() {
+        return "EstacionTrabajo{" +
+                "nroEstacion=" + nroEstacion +
+                ", libre=" + libre +
+                '}';
+    }
 }

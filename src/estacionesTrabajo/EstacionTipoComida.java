@@ -21,7 +21,7 @@ public class EstacionTipoComida extends EstacionTrabajo {
 	
 	public boolean cumple(ElementoComida c){
 		//Si el tipo de la comida es del tipo de ESTA estacion
-		return ( c.getTipo().toLowerCase().equals(this.getTipo().toLowerCase() ) );
+		return ( isLibre() && c.getTipo().toLowerCase().equals(this.getTipo().toLowerCase() ) );
 	}
 
 }

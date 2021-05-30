@@ -12,7 +12,7 @@ public class EstacionSaleconFritas extends EstacionTrabajo {
 
 	public boolean cumple(ElementoComida c){
 		//Siempre CUMPLE con la condicion
-		return true;
+		return isLibre();
 	}
 
 }

@@ -8,14 +8,10 @@ import src.estacionesTrabajo.*;
 public class Palacio {
 
 
-
-
     public static void main (String[] args){
 
-
-
     //Creamos COMIDAS SIMPLES Y COMPUESTAS
-        ComidaBase c1=new ComidaBase ("pollo","carne","horno",250,45,1500);
+        ComidaBase c1=new ComidaBase ("pollo","carne","horno",250,10,1500);
         ComidaBase c2=new ComidaBase ("tapas de empanada","entrada","frito",50,3,500);
         ComidaBase c3=new ComidaBase ("arroz","cereal","hervido",120,30,200);
 
@@ -30,8 +26,9 @@ public class Palacio {
 
     //Creamos PEDIDO y agregamos COMIDAS
         Pedido p1=new Pedido(5,2,"Juampi");
-        p1.agregarComida(comp1);
-        p1.agregarComida(comp2);
+        p1.agregarComida(c1);
+        // p1.agregarComida(comp1);
+        // p1.agregarComida(comp2);
 
 
     //***  BUSQUEDAS  ***
@@ -66,11 +63,11 @@ public class Palacio {
         //Creamos una estacion de trabajo de tipo: Tipo de Comida
         EstacionTrabajo estTipoComida1 = new EstacionTipoComida(3, true, "carne");
         //Creamos una estacion de trabajo de tipo: Modo de Preparacion
-        EstacionTrabajo estModoPreparacion1 = new EstacionModoPreparacion(4, true, "horno");
+        EstacionTrabajo estModoPreparacion1 = new EstacionModoPreparacion(4, false, "horno");
         //ejemplo
-        System.out.println(  estModoPreparacion1.getNroEstacion());
+        System.out.println(estModoPreparacion1.getNroEstacion());
         estModoPreparacion1=new EstacionSaleconFritas(99,true);
-        System.out.println(  estModoPreparacion1.getNroEstacion());
+        System.out.println(estModoPreparacion1.getNroEstacion());
 
 
     //*** COCINA ***
@@ -86,19 +83,12 @@ public class Palacio {
         //Entregamos PEDIDO a la COCINA
         nuestraCocina.addPedido(p1);
         System.out.println(nuestraCocina);
-
+        //Asigamos las comidas del PEDIDO en la COCINA
+        nuestraCocina.asignarComidas_aEstacion(p1);
+        System.out.println(nuestraCocina);
         //Cargamos el CRITERIO DE CALCULO DE PRECIOS VIGENTE
-       nuestraCocina.setCalculoAdicional(porcYCalc1);
-       System.out.println(nuestraCocina.PrecioFinalPedido(p1));
-
-
-
-
-
-
-
-
-
+        nuestraCocina.setCalculoAdicional(porcYCalc1);
+        System.out.println(nuestraCocina.PrecioFinalPedido(p1));
 
     }
 

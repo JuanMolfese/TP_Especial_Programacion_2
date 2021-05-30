@@ -2,14 +2,13 @@ package src;
 
 import src.calculosTarifa.CalculadorPrecio;
 import src.compositeComida.ElementoComida;
-
+import src.estacionesTrabajo.EstacionTrabajo;
 import java.util.ArrayList;
 
 public class Pedido {
 	private ArrayList<ElementoComida> comidas;
 	private int nroMesa,nroPedido,precioTotal;
 	private String mozo;
-
 
 	public Pedido(int nroMesa, int nroPedido,String mozo) {
 		
@@ -43,7 +42,8 @@ public class Pedido {
 	public void agregarComida (ElementoComida c){comidas.add(c);}
 
 
-	public int precioFinalComida(){//
+	public int precioFinalComida(){
+		precioTotal=0;
 		for (ElementoComida com: comidas){
 			precioTotal+=com.getPrecio();
 		}
@@ -57,6 +57,15 @@ public class Pedido {
 			sumaTotal += c.getPrecio()+cal.calcularAdicional(c);
 		}
 		return sumaTotal;
+	}
+
+
+	public void consultarRequisitos(EstacionTrabajo estacion){
+		for (ElementoComida comida : comidas) {
+			if (estacion.cumple(comida)){
+				comida.setEstacionAsignada(estacion.getNroEstacion());
+			}
+		}
 	}
 
 

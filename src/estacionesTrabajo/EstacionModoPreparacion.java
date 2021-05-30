@@ -23,8 +23,7 @@ public class EstacionModoPreparacion extends EstacionTrabajo {
 
 	public boolean cumple(ElementoComida c){
 		//Si el modo de preparacion de la cominda
-		return ( c.getModoPreparacion().toLowerCase().equals(this.modoPreparacion.toLowerCase()));
-
+		return ( isLibre()&&c.getModoPreparacion().toLowerCase().equals(this.modoPreparacion.toLowerCase()));
 		}
 }
 	

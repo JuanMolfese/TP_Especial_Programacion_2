@@ -1,18 +1,17 @@
 package src;
 
-
-
 import src.calculosTarifa.CalculadorPrecio;
+import src.compositeComida.ElementoComida;
 import src.estacionesTrabajo.EstacionTrabajo;
 
 import java.util.ArrayList;
+import java.util.function.ToDoubleBiFunction;
 
 public class Cocina {
 
 	private CalculadorPrecio calculoAdicional;
 	private ArrayList<EstacionTrabajo> estaciones;
 	private ArrayList<Pedido> pedidos;
-
 
 
 
@@ -46,13 +45,13 @@ public class Cocina {
 		}
 	}
 
-	public void asignarComidas(Pedido p) {
-		//foreach del arraylista pedido ???
 
-		//tomo de una comida y le pregunto a cada estacion de trabajo
-		//SI : cumple(Comida c) && esta Libre => asigno a la estacion esa comida y la pongo en false al Libre.
-
+	public void asignarComidas_aEstacion(Pedido p) {
+		for (EstacionTrabajo estacion: estaciones) {
+			p.consultarRequisitos(estacion);
+		}
 	}
+
 
 	@Override
 	public String toString() {
@@ -63,4 +62,3 @@ public class Cocina {
 				"}\n";
 	}
 }
-
