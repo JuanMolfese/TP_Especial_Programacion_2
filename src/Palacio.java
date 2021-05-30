@@ -60,13 +60,18 @@ public class Palacio {
 
     //*** ESTACIONES DE TRABAJO  ***
         //Creamos una estacion de trabajo de tipo : Tiempo Max de Coccion
-        EstacionTemporal estTemporal1 = new EstacionTemporal(1, true, 80);
+        EstacionTrabajo estTemporal1 = new EstacionTemporal(1, true, 80);
         //Creamos una estacion de trabajo de tipo: Sale con Fritas - Atiende todas las comidas mientas este libre
-        EstacionSaleconFritas estSaleConFritas1 = new EstacionSaleconFritas(2,true);
+        EstacionTrabajo estSaleConFritas1 = new EstacionSaleconFritas(2,true);
         //Creamos una estacion de trabajo de tipo: Tipo de Comida
-        EstacionTipoComida estTipoComida1 = new EstacionTipoComida(3, true, "carne");
+        EstacionTrabajo estTipoComida1 = new EstacionTipoComida(3, true, "carne");
         //Creamos una estacion de trabajo de tipo: Modo de Preparacion
-        EstacionModoPreparacion estModoPreparacion1 = new EstacionModoPreparacion(4, true, "horno");
+        EstacionTrabajo estModoPreparacion1 = new EstacionModoPreparacion(4, true, "horno");
+        //ejemplo
+        System.out.println(  estModoPreparacion1.getNroEstacion());
+        estModoPreparacion1=new EstacionSaleconFritas(99,true);
+        System.out.println(  estModoPreparacion1.getNroEstacion());
+
 
     //*** COCINA ***
         //Creamos el objeto COCINA
