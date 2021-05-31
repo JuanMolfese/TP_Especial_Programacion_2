@@ -71,13 +71,12 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido{" +
-				" nroPedido=" + nroPedido +
-				", nroMesa=" + nroMesa +
-				", mozo= " + mozo +"\n"+
-				"comidas=" + comidas + "\n" +
-				" Precio total del pedido=" + precioFinalComida() +
-				"}\n";
+		return 	"Pedido Nro = " + nroPedido +
+				", Nro Mesa = " + nroMesa +
+				", Mozo = " + mozo +"\n"+
+				" Comidas = " + comidas + "\n" +
+				" Precio total del pedido = $ " + precioFinalComida() +
+				"\n";
 	}
 
 }

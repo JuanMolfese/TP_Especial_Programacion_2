@@ -27,8 +27,8 @@ public class Palacio {
     //Creamos PEDIDO y agregamos COMIDAS
         Pedido p1=new Pedido(5,2,"Juampi");
         p1.agregarComida(c1);
-        // p1.agregarComida(comp1);
-        // p1.agregarComida(comp2);
+        p1.agregarComida(comp1);
+        p1.agregarComida(comp2);
 
 
     //***  BUSQUEDAS  ***
@@ -44,30 +44,36 @@ public class Palacio {
         BuscarTipo tipoComida2 = new BuscarTipo("carne");
 
         //Logica: AND y OR
-        BusquedaCombinada_AND and = new BusquedaCombinada_AND(tiempoCoc1,modoCoc1);
-        BusquedaCombinada_OR or = new BusquedaCombinada_OR(modoCoc2,tipoComida2);
+        BusquedaCombinada_AND and_TiempoMenor50_y_ModoHorno = new BusquedaCombinada_AND(tiempoCoc1,modoCoc1);
+        BusquedaCombinada_OR or_ModoHervido_o_TipoCarne = new BusquedaCombinada_OR(modoCoc2,tipoComida2);
 
+    //*** CALCULADORES ***
         //Utilizamos Busquedas y determinamos valor monetarios para si se cumple o no se cumple.
-        CalculadorPorCondicion calc1 = new CalculadorPorCondicion(and, 50, 130);
+        CalculadorPorCondicion calcCondicion_1 = new CalculadorPorCondicion(and_TiempoMenor50_y_ModoHorno, 50, 130);
 
-        //Cargo porcentajes fijos (positivos o negativos) a todas las comidas de un pedido.
-        CalculadorPorPorcentaje porc1=new CalculadorPorPorcentaje("Miercoles",-20);
-        CalculadorAND porcYCalc1=new CalculadorAND(calc1,porc1);
+        //Cargamos porcentajes fijos (positivos o negativos) a todas las comidas de un pedido.
+        CalculadorPorPorcentaje calcMiercoles =new CalculadorPorPorcentaje("Miercoles",-20);
+
+        //Combinacion logica and calculador por condicion y calculador por procentaje.
+        CalculadorAND calculadorAnd_Condicion_1_y_miercoles = new CalculadorAND(calcCondicion_1 , calcMiercoles);
 
 
     //*** ESTACIONES DE TRABAJO  ***
         //Creamos una estacion de trabajo de tipo : Tiempo Max de Coccion
-        EstacionTrabajo estTemporal1 = new EstacionTemporal(1, true, 80);
+        EstacionTrabajo estTemporal_1 = new EstacionTemporal(1, true, 80);
         //Creamos una estacion de trabajo de tipo: Sale con Fritas - Atiende todas las comidas mientas este libre
-        EstacionTrabajo estSaleConFritas1 = new EstacionSaleconFritas(2,true);
+        EstacionTrabajo estSaleConFritas_1 = new EstacionSaleconFritas(2,true);
         //Creamos una estacion de trabajo de tipo: Tipo de Comida
-        EstacionTrabajo estTipoComida1 = new EstacionTipoComida(3, true, "carne");
+        EstacionTrabajo estTipoComida_1 = new EstacionTipoComida(3, true, "carne");
         //Creamos una estacion de trabajo de tipo: Modo de Preparacion
-        EstacionTrabajo estModoPreparacion1 = new EstacionModoPreparacion(4, false, "horno");
-        //ejemplo
-        System.out.println(estModoPreparacion1.getNroEstacion());
-        estModoPreparacion1=new EstacionSaleconFritas(99,true);
-        System.out.println(estModoPreparacion1.getNroEstacion());
+        EstacionTrabajo estModoPreparacion_1 = new EstacionModoPreparacion(4, false, "horno");
+
+        //ejemplo Cambio de funcionalidad de la estacion Modo Preparacion a sale con fritas
+        System.out.println("El numero de estacion de la estacion por Modo de Preparacion es "
+                + estModoPreparacion_1.getNroEstacion());
+        estModoPreparacion_1=new EstacionSaleconFritas(99,true);
+        System.out.println("El numero de estacion de la estacion por Modo de Preparacion es "
+                +estModoPreparacion_1.getNroEstacion()+" y ahora su funcionalidad es de tipo Sale con fritas");
 
 
     //*** COCINA ***
@@ -75,19 +81,21 @@ public class Palacio {
         Cocina nuestraCocina = new Cocina();
 
         //Asignamos las estaciones de trabajo a la cocina.
-        nuestraCocina.addEstacion(estTemporal1);
-        nuestraCocina.addEstacion(estSaleConFritas1);
-        nuestraCocina.addEstacion(estTipoComida1);
-        nuestraCocina.addEstacion(estModoPreparacion1);
+        nuestraCocina.addEstacion(estTemporal_1);
+        nuestraCocina.addEstacion(estModoPreparacion_1);
+        nuestraCocina.addEstacion(estTipoComida_1);
+        nuestraCocina.addEstacion(estSaleConFritas_1);
 
         //Entregamos PEDIDO a la COCINA
         nuestraCocina.addPedido(p1);
         System.out.println(nuestraCocina);
+
         //Asigamos las comidas del PEDIDO en la COCINA
         nuestraCocina.asignarComidas_aEstacion(p1);
         System.out.println(nuestraCocina);
+
         //Cargamos el CRITERIO DE CALCULO DE PRECIOS VIGENTE
-        nuestraCocina.setCalculoAdicional(porcYCalc1);
+        nuestraCocina.setCalculoAdicional(calculadorAnd_Condicion_1_y_miercoles);
         System.out.println(nuestraCocina.PrecioFinalPedido(p1));
 
     }

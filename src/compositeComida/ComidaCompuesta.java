@@ -55,11 +55,11 @@ public class ComidaCompuesta extends ElementoComida {
     @Override
     public String toString() {
         return getNombre()+"\n" +
-                "Compuesta por= " + listaComidas +
-                "tiempoTotal= " + getTiempo() +" minutos, "+
-                "total calorías= " + getCalorias() + " calorias, "+
-                "modo preparación= " +getModoPreparacion()+
-                "preciototal= $" + getPrecio() +
+                "Compuesta por = " + listaComidas +
+                "Tiempo total de preparacion = " + getTiempo() +" minutos, "+
+                "Total de calorías de la comida = " + getCalorias() + " calorias, "+
+                "Modo de preparación = " +getModoPreparacion()+
+                ", Precio total = $ " + getPrecio() +
                 "\n";
     }
 }

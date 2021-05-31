@@ -43,11 +43,9 @@ public abstract class ElementoComida {
 
     @Override
     public String toString() {
-        return "ElementoComida{" +
-                "nombre='" + nombre + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", modoPreparacion='" + modoPreparacion + '\'' +
-                ", estacionAsignada=" + estacionAsignada +
-                '}';
+        return  "Nombre = " + nombre +
+                ", Tipo = " + tipo +
+                ", Modo de preparacion = " + modoPreparacion +
+                ", Estacion Asignada = " + estacionAsignada + " , ";
     }
 }

@@ -55,10 +55,10 @@ public class Cocina {
 
 	@Override
 	public String toString() {
-		return "Cocina{\n" +
-				"calculosAdicionales=" + calculoAdicional +
-				", estaciones=" + estaciones +
-				", pedidos=" + pedidos +
-				"}\n";
+		return "Cocina :\n" +
+				"Calculos Adicionales = " + calculoAdicional +
+				"\nEstaciones = \n" + estaciones +
+				"Pedidos = \n" + pedidos +
+				"\n";
 	}
 }

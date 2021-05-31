@@ -29,9 +29,7 @@ public abstract class EstacionTrabajo {
 
     @Override
     public String toString() {
-        return "EstacionTrabajo{" +
-                "nroEstacion=" + nroEstacion +
-                ", libre=" + libre +
-                '}';
+        return "Estacion de Trabajo :" + nroEstacion +
+                ", libre=" + libre + "\n";
     }
 }
