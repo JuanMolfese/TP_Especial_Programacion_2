@@ -29,6 +29,11 @@ public class ComidaBase extends ElementoComida{
     }
 
     @Override
+    public boolean asignada() {
+        return (this.getEstacionAsignada()!=0);
+    }
+
+    @Override
     public String toString() {
         return   super.toString()+
                 "Precio = $ " + getPrecio() +

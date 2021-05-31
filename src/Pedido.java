@@ -62,7 +62,7 @@ public class Pedido {
 
 	public void consultarRequisitos(EstacionTrabajo estacion){
 		for (ElementoComida comida : comidas) {
-			if (estacion.cumple(comida)){
+			if (!comida.asignada()&&estacion.cumple(comida)){
 				comida.setEstacionAsignada(estacion.getNroEstacion());
 			}
 		}

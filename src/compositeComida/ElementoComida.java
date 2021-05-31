@@ -25,6 +25,10 @@ public abstract class ElementoComida {
         return modoPreparacion;
     }
 
+    public int getEstacionAsignada() {
+        return estacionAsignada;
+    }
+
     public void setEstacionAsignada(int estacionAsignada) {
         this.estacionAsignada = estacionAsignada;
     }
@@ -32,6 +36,7 @@ public abstract class ElementoComida {
     public abstract int getPrecio();
     public abstract int getTiempo();
     public abstract int getCalorias();
+    public abstract boolean asignada();
 
 
 
