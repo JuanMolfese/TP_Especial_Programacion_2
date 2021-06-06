@@ -3,7 +3,10 @@ import src.busquedas.*;
 import src.calculosTarifa.*;
 import src.compositeComida.ComidaBase;
 import src.compositeComida.ComidaCompuesta;
-import src.estacionesTrabajo.*;
+import src.criteriosEstacion.CriterioModoPreparacion;
+import src.criteriosEstacion.CriterioSaleConFritas;
+import src.criteriosEstacion.CriterioTiempoMenor;
+import src.criteriosEstacion.CriterioTipoComida;
 
 public class Palacio {
 
@@ -60,20 +63,23 @@ public class Palacio {
 
     //*** ESTACIONES DE TRABAJO  ***
         //Creamos una estacion de trabajo de tipo : Tiempo Max de Coccion
-        EstacionTrabajo estTemporal_1 = new EstacionTemporal(1, true, 80);
-        //Creamos una estacion de trabajo de tipo: Sale con Fritas - Atiende todas las comidas mientas este libre
-        EstacionTrabajo estSaleConFritas_1 = new EstacionSaleconFritas(2,true);
-        //Creamos una estacion de trabajo de tipo: Tipo de Comida
-        EstacionTrabajo estTipoComida_1 = new EstacionTipoComida(3, true, "carne");
-        //Creamos una estacion de trabajo de tipo: Modo de Preparacion
-        EstacionTrabajo estModoPreparacion_1 = new EstacionModoPreparacion(4, false, "horno");
+        EstacionTrabajo estTemporal_1 = new EstacionTrabajo("temporal",2,
+                                        new CriterioTiempoMenor(45));
 
-        //ejemplo Cambio de funcionalidad de la estacion Modo Preparacion a sale con fritas
-        System.out.println("El numero de estacion de la estacion por Modo de Preparacion es "
-                + estModoPreparacion_1.getNroEstacion());
-        estModoPreparacion_1=new EstacionSaleconFritas(99,true);
-        System.out.println("El numero de estacion de la estacion por Modo de Preparacion es "
-                +estModoPreparacion_1.getNroEstacion()+" y ahora su funcionalidad es de tipo Sale con fritas");
+        //Cambiamos especialidad de la estacion en tiempo de ejecución
+        estTemporal_1.setCriterio(new CriterioSaleConFritas());
+
+        //Creamos una estacion de trabajo de tipo: Sale con Fritas - Atiende todas las comidas mientas este libre
+        EstacionTrabajo estSaleConFritas_1 = new EstacionTrabajo("Sale con fritas",1,
+                                             new CriterioSaleConFritas());
+        //Creamos una estacion de trabajo de tipo: Tipo de Comida
+        EstacionTrabajo estTipoComida_1 = new EstacionTrabajo("Por tipo",4,
+                                          new CriterioTipoComida("carne"));
+        //Creamos una estacion de trabajo de tipo: Modo de Preparacion
+        EstacionTrabajo estModoPreparacion_1 = new EstacionTrabajo("Por modo preparacion",6,
+                                               new CriterioModoPreparacion("horno"));
+
+
 
 
     //*** COCINA ***
@@ -88,15 +94,16 @@ public class Palacio {
 
         //Entregamos PEDIDO a la COCINA
         nuestraCocina.addPedido(p1);
-        System.out.println(nuestraCocina);
+
 
         //Asigamos las comidas del PEDIDO en la COCINA
         nuestraCocina.asignarComidas_aEstacion(p1);
-        System.out.println(nuestraCocina);
+
 
         //Cargamos el CRITERIO DE CALCULO DE PRECIOS VIGENTE
         nuestraCocina.setCalculoAdicional(calculadorAnd_Condicion_1_y_miercoles);
-        System.out.println(nuestraCocina.PrecioFinalPedido(p1));
+        System.out.println(nuestraCocina);
+
 
     }
 

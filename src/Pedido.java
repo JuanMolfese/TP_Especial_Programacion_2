@@ -2,7 +2,7 @@ package src;
 
 import src.calculosTarifa.CalculadorPrecio;
 import src.compositeComida.ElementoComida;
-import src.estacionesTrabajo.EstacionTrabajo;
+
 import java.util.ArrayList;
 
 public class Pedido {
@@ -62,8 +62,9 @@ public class Pedido {
 
 	public void consultarRequisitos(EstacionTrabajo estacion){
 		for (ElementoComida comida : comidas) {
-			if (!comida.asignada()&&estacion.cumple(comida)){
+			if (!comida.asignada()&&estacion.recibeComida(comida)){
 				comida.setEstacionAsignada(estacion.getNroEstacion());
+
 			}
 		}
 	}

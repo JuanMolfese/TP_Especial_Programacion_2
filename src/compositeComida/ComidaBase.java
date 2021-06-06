@@ -4,13 +4,16 @@ public class ComidaBase extends ElementoComida{
     private int precio,tiempo,calorias;
 
 
+
     public ComidaBase(String nombre, String tipo, String modoPreparacion, int precio, int tiempo, int calorias) {
         super(nombre, tipo, modoPreparacion);
         this.precio = precio;
         this.tiempo = tiempo;
         this.calorias = calorias;
 
+
     }
+
 
 
     @Override
@@ -28,10 +31,8 @@ public class ComidaBase extends ElementoComida{
         return this.calorias;
     }
 
-    @Override
-    public boolean asignada() {
-        return (this.getEstacionAsignada()!=0);
-    }
+
+
 
     @Override
     public String toString() {

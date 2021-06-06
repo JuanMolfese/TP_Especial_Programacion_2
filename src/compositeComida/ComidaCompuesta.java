@@ -49,6 +49,7 @@ public class ComidaCompuesta extends ElementoComida {
         return totalCalorias;
     }
 
+
     @Override
     public boolean asignada() {
         return (this.getEstacionAsignada()!=0);

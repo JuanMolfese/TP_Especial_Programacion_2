@@ -1,11 +1,8 @@
 package src;
 
 import src.calculosTarifa.CalculadorPrecio;
-import src.compositeComida.ElementoComida;
-import src.estacionesTrabajo.EstacionTrabajo;
 
 import java.util.ArrayList;
-import java.util.function.ToDoubleBiFunction;
 
 public class Cocina {
 

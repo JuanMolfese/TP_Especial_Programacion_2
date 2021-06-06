@@ -1,12 +1,13 @@
-package src.estacionesTrabajo;
+package src.criteriosEstacion;
 
 import src.compositeComida.ElementoComida;
+import src.EstacionTrabajo;
 
-public class EstacionTemporal extends EstacionTrabajo {
+public class CriterioTiempoMenor implements CriterioEstacion {
 	private int tiempoCoccionMaxima;
 
-	public EstacionTemporal(int  nroEstacion, boolean libre, int tiempoCoccionMaxima) {
-		super(nroEstacion, libre);
+	public CriterioTiempoMenor(int tiempoCoccionMaxima) {
+
 		this.tiempoCoccionMaxima = tiempoCoccionMaxima;
 	}
 
@@ -21,7 +22,7 @@ public class EstacionTemporal extends EstacionTrabajo {
 
 	public boolean cumple(ElementoComida c){
 		//Si el tiempo de coccion de la comida es menor al tiempo de ESTA estacion TRUE
-		return (isLibre() && c.getTiempo()<this.tiempoCoccionMaxima);
+		return (c.getTiempo()<this.tiempoCoccionMaxima);
 	}
 
 }

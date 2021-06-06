@@ -1,12 +1,13 @@
-package src.estacionesTrabajo;
+package src.criteriosEstacion;
 
 import src.compositeComida.ElementoComida;
+import src.EstacionTrabajo;
 
-public class EstacionTipoComida extends EstacionTrabajo {
+public class CriterioTipoComida implements CriterioEstacion {
 	private String tipo;
 
-	public EstacionTipoComida(int nroEstacion, boolean libre, String tipo) {
-		super(nroEstacion, libre);
+	public CriterioTipoComida(String tipo) {
+
 		this.tipo = tipo;
 	}
 
@@ -21,7 +22,7 @@ public class EstacionTipoComida extends EstacionTrabajo {
 	
 	public boolean cumple(ElementoComida c){
 		//Si el tipo de la comida es del tipo de ESTA estacion
-		return ( isLibre() && c.getTipo().toLowerCase().equals(this.getTipo().toLowerCase() ) );
+		return (c.getTipo().toLowerCase().equals(this.getTipo().toLowerCase() ) );
 	}
 
 }

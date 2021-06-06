@@ -7,6 +7,7 @@ public abstract class ElementoComida {
    private int estacionAsignada;
 
 
+
     public ElementoComida(String nombre, String tipo, String modoPreparacion) {
         this.nombre = nombre;
         this.tipo = tipo;
@@ -36,9 +37,11 @@ public abstract class ElementoComida {
     public abstract int getPrecio();
     public abstract int getTiempo();
     public abstract int getCalorias();
-    public abstract boolean asignada();
 
 
+    public boolean asignada() {
+        return (this.getEstacionAsignada()!=0);
+    }
 
     @Override
     public boolean equals(Object o) {

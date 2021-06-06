@@ -1,12 +1,13 @@
-package src.estacionesTrabajo;
+package src.criteriosEstacion;
 
 import src.compositeComida.ElementoComida;
+import src.EstacionTrabajo;
 
-public class EstacionModoPreparacion extends EstacionTrabajo {
+public class CriterioModoPreparacion implements CriterioEstacion {
 	private String modoPreparacion;
 
-	public EstacionModoPreparacion(int nroEstacion, boolean libre, String modoPreparacion) {
-		super(nroEstacion, libre);
+	public CriterioModoPreparacion(String modoPreparacion) {
+
 		this.modoPreparacion = modoPreparacion;
 	}
 
@@ -23,7 +24,7 @@ public class EstacionModoPreparacion extends EstacionTrabajo {
 
 	public boolean cumple(ElementoComida c){
 		//Si el modo de preparacion de la cominda
-		return ( isLibre()&&c.getModoPreparacion().toLowerCase().equals(this.modoPreparacion.toLowerCase()));
+		return ( c.getModoPreparacion().toLowerCase().equals(this.modoPreparacion.toLowerCase()));
 		}
 }
 	
