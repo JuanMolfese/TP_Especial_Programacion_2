@@ -1,12 +1,9 @@
 package src;
-import src.busquedas.*;
+
 import src.calculosTarifa.*;
 import src.compositeComida.ComidaBase;
 import src.compositeComida.ComidaCompuesta;
-import src.criteriosEstacion.CriterioModoPreparacion;
-import src.criteriosEstacion.CriterioSaleConFritas;
-import src.criteriosEstacion.CriterioTiempoMenor;
-import src.criteriosEstacion.CriterioTipoComida;
+import src.criteriosEstacion.*;
 
 public class Palacio {
 
@@ -34,21 +31,22 @@ public class Palacio {
         p1.agregarComida(comp2);
 
 
-    //***  BUSQUEDAS  ***
+    //***  ESTABLECIMIENTO DE CRITERIOS  ***
         //Por TIEMPO de coccion
-        BuscarTiempoCoccion tiempoCoc1=new BuscarTiempoCoccion(50);
+        CriterioTiempoMenor tiempoCoc1=new CriterioTiempoMenor(50);
 
         //Por MODO de coccion
-        BuscarModoCoccion modoCoc1= new BuscarModoCoccion("horno");
-        BuscarModoCoccion modoCoc2= new BuscarModoCoccion("hervido");
+        CriterioModoPreparacion modoCoc1= new  CriterioModoPreparacion("horno");
+        CriterioModoPreparacion modoCoc2= new  CriterioModoPreparacion("hervido");
 
         //Por TIPO de comida
-        BuscarTipo tipoComida1 = new BuscarTipo("ensalada");
-        BuscarTipo tipoComida2 = new BuscarTipo("carne");
+        CriterioTipoComida tipoComida1 = new CriterioTipoComida("ensalada");
+        CriterioTipoComida tipoComida2 = new CriterioTipoComida("carne");
 
         //Logica: AND y OR
-        BusquedaCombinada_AND and_TiempoMenor50_y_ModoHorno = new BusquedaCombinada_AND(tiempoCoc1,modoCoc1);
-        BusquedaCombinada_OR or_ModoHervido_o_TipoCarne = new BusquedaCombinada_OR(modoCoc2,tipoComida2);
+        CriterioAND and_TiempoMenor50_y_ModoHorno = new CriterioAND(modoCoc1,tiempoCoc1);
+        CriterioOR or_ModoHervido_o_TipoCarne = new CriterioOR(modoCoc2,tipoComida2);
+
 
     //*** CALCULADORES ***
         //Utilizamos Busquedas y determinamos valor monetarios para si se cumple o no se cumple.
@@ -77,7 +75,7 @@ public class Palacio {
                                           new CriterioTipoComida("carne"));
         //Creamos una estacion de trabajo de tipo: Modo de Preparacion
         EstacionTrabajo estModoPreparacion_1 = new EstacionTrabajo("Por modo preparacion",6,
-                                               new CriterioModoPreparacion("horno"));
+                                               new src.criteriosEstacion.CriterioModoPreparacion("horno"));
 
 
 
@@ -96,13 +94,15 @@ public class Palacio {
         nuestraCocina.addPedido(p1);
 
 
-        //Asigamos las comidas del PEDIDO en la COCINA
+        //Asignamos las comidas del PEDIDO en la COCINA
         nuestraCocina.asignarComidas_aEstacion(p1);
 
 
         //Cargamos el CRITERIO DE CALCULO DE PRECIOS VIGENTE
         nuestraCocina.setCalculoAdicional(calculadorAnd_Condicion_1_y_miercoles);
+
         System.out.println(nuestraCocina);
+        System.out.println (nuestraCocina.PrecioFinalPedido(p1));
 
 
     }

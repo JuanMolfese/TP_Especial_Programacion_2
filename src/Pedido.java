@@ -64,7 +64,6 @@ public class Pedido {
 		for (ElementoComida comida : comidas) {
 			if (!comida.asignada()&&estacion.recibeComida(comida)){
 				comida.setEstacionAsignada(estacion.getNroEstacion());
-
 			}
 		}
 	}
@@ -72,12 +71,10 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return 	"Pedido Nro = " + nroPedido +
+		return "Pedido Nro = " + nroPedido +
 				", Nro Mesa = " + nroMesa +
-				", Mozo = " + mozo +"\n"+
-				" Comidas = " + comidas + "\n" +
-				" Precio total del pedido = $ " + precioFinalComida() +
-				"\n";
+				", Mozo = " + mozo + "\n" +
+				" Comidas = " + comidas ;
 	}
 
 }

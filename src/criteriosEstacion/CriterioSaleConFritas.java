@@ -1,7 +1,7 @@
 package src.criteriosEstacion;
 
 import src.compositeComida.ElementoComida;
-import src.EstacionTrabajo;
+
 
 public class CriterioSaleConFritas implements CriterioEstacion {
 

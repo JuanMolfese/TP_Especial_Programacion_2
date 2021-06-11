@@ -1,13 +1,14 @@
 package src.calculosTarifa;
 
 import src.compositeComida.ElementoComida;
-import src.busquedas.CriterioBusqueda;
+
+import src.criteriosEstacion.CriterioEstacion;
 
 public class CalculadorPorCondicion implements CalculadorPrecio{
-   private CriterioBusqueda condicion;
+   private CriterioEstacion condicion;
    private int seCumple, noSeCumple;
 
-   public CalculadorPorCondicion(CriterioBusqueda condicion, int seCumple, int noSeCumple) {
+   public CalculadorPorCondicion(CriterioEstacion condicion, int seCumple, int noSeCumple) {
       this.condicion = condicion;
       this.seCumple = seCumple;
       this.noSeCumple = noSeCumple;

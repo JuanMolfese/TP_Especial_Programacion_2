@@ -1,7 +1,7 @@
 package src.criteriosEstacion;
 
 import src.compositeComida.ElementoComida;
-import src.EstacionTrabajo;
+
 
 public class CriterioTipoComida implements CriterioEstacion {
 	private String tipo;
@@ -11,18 +11,9 @@ public class CriterioTipoComida implements CriterioEstacion {
 		this.tipo = tipo;
 	}
 
-	//Getters y Setters
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	
 	public boolean cumple(ElementoComida c){
 		//Si el tipo de la comida es del tipo de ESTA estacion
-		return (c.getTipo().toLowerCase().equals(this.getTipo().toLowerCase() ) );
+		return (c.getTipo().equalsIgnoreCase(this.tipo) );
 	}
 
 }

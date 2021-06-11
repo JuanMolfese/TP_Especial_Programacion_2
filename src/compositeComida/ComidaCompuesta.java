@@ -6,14 +6,10 @@ public class ComidaCompuesta extends ElementoComida {
     private ArrayList<ElementoComida> listaComidas;
 
     public ComidaCompuesta(String nombre, String tipo, String modoPreparacion) {
-        //TODO Cris debemos charlar sobre el modo de preparacion, porque ponele si
-        // una comida base es frita y la otra al horno...el modo de preparacion de la compuesta ?? aparte lo
-        // generamos desde el constructor (al modo de preparacion) ... esta bien ?
 
         super(nombre, tipo, modoPreparacion);
         this.listaComidas = new ArrayList<>();
     }
-
 
     public void agregarComidaBase(ElementoComida com){
         if(!listaComidas.contains(com.getNombre())){
@@ -49,14 +45,6 @@ public class ComidaCompuesta extends ElementoComida {
         return totalCalorias;
     }
 
-
-    @Override
-    public boolean asignada() {
-        return (this.getEstacionAsignada()!=0);
-    }
-
-    //que hacer con estacionAsignada? Las comidas base de una comida compuesta
-    // se cocinan todas en una estacion, y es la misma para simples y compuesta?
 
     @Override
     public String toString() {

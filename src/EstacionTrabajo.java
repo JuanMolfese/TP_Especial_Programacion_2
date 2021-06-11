@@ -27,16 +27,15 @@ public  class EstacionTrabajo {
     public void setLibre(boolean libre) {
         this.libre = libre;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setCriterio(CriterioEstacion criterio) {
         this.criterio = criterio;
     }
 
     public boolean recibeComida(ElementoComida c){
+
         return (this.isLibre()&& criterio.cumple(c));
     }
 

@@ -32,8 +32,8 @@ public class Cocina {
 	}
 
 
-
-	public int PrecioFinalPedido(Pedido p){//establezco precio final en base a los criterios
+	//establezco precio final en base a los criterios
+	public int PrecioFinalPedido(Pedido p){
 		if (calculoAdicional!=null) {
 			return p.precioFinalComida(calculoAdicional);
 		}
